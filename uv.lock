@@ -2855,7 +2855,7 @@ wheels = [
 [[package]]
 name = "qap-assignment"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "notebook" },
     { name = "pymoo", extra = ["full"] },
