@@ -2859,12 +2859,14 @@ source = { editable = "." }
 dependencies = [
     { name = "notebook" },
     { name = "pymoo", extra = ["full"] },
+    { name = "tqdm" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "notebook", specifier = ">=7.5.4" },
     { name = "pymoo", extras = ["full"], specifier = ">=0.6.1.6" },
+    { name = "tqdm", specifier = ">=4.67.3" },
 ]
 
 [[package]]
