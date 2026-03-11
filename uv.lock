@@ -2872,6 +2872,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "notebook" },
+    { name = "numba" },
     { name = "pymoo", extra = ["full"] },
     { name = "tqdm" },
 ]
@@ -2879,6 +2880,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "notebook", specifier = ">=7.5.4" },
+    { name = "numba", specifier = ">=0.64.0" },
     { name = "pymoo", extras = ["full"], specifier = ">=0.6.1.6" },
     { name = "tqdm", specifier = ">=4.67.3" },
 ]

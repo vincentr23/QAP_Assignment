@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "notebook>=7.5.4",
+    "numba>=0.64.0",
     "pymoo[full]>=0.6.1.6",
     "tqdm>=4.67.3",
 ]
