@@ -47,7 +47,6 @@ def tabu_search(
     for i in range(n):
         for j in range(i + 1, n):
             D[i, j] = compute_delta(A, B, p, i, j)
-            D[j, i] = D[i, j]
 
     tabu_list = np.zeros((n, n))
     current_cost = 0
@@ -95,10 +94,8 @@ def tabu_search(
                         * (B[ps, p[i]] - B[ps, p[j]] + B[pr, p[j]] - B[pr, p[i]])
                     )
                     D[i, j] += delta_update
-                    D[j, i] = D[i, j]
                 else:
                     D[i, j] = compute_delta(A, B, p, i, j)
-                    D[j, i] = D[i, j]
     return best_p
 
 
