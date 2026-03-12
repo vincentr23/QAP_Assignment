@@ -17,7 +17,7 @@ def compute_delta(A: np.ndarray, B: np.ndarray, p: np.ndarray, i: int, j: int):
     """
     # Not identical to Equation 1 of [1]. We want negative value for
     # improvement, but original formulation would give us positive.
-    # This iwhy we do B[p[j], p[k]] on left instead of B[p[i], p[k]].
+    # This is why we do B[p[j], p[k]] on left instead of B[p[i], p[k]].
     # N.b., this is also what Taillard's code in [2] does.
     n = len(p)
     d = 0
@@ -45,10 +45,8 @@ def tabu_search(
 
     D = np.zeros((n, n))
     for i in range(n):
-        # Taillard does it for range(0, i), doesn't matter b/c symmetry.
         for j in range(i + 1, n):
             D[i, j] = compute_delta(A, B, p, i, j)
-            D[j, i] = D[i, j]
 
     tabu_list = np.zeros((n, n))
     current_cost = 0
@@ -96,10 +94,8 @@ def tabu_search(
                         * (B[ps, p[i]] - B[ps, p[j]] + B[pr, p[j]] - B[pr, p[i]])
                     )
                     D[i, j] += delta_update
-                    D[j, i] = D[i, j]
                 else:
                     D[i, j] = compute_delta(A, B, p, i, j)
-                    D[j, i] = D[i, j]
     return best_p
 
 
